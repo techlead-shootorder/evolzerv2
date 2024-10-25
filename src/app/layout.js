@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import GoTop from "@/components/GoTop/Gotop";
 import Footer from "@/components/footer/Footer";
+import CombinedHeader from "@/components/header/CombineHeader";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,7 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}>
-        <Header />
+        <CombinedHeader />
         <GoTop/>
         <div className="absolute inset-0 z-0">{children}
         <Footer/>

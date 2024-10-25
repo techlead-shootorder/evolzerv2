@@ -19,28 +19,28 @@ const Statistics = () => {
         </div>
 
         <div className="flex flex-wrap justify-between">
-          <div className="w-full sm:w-1/2 lg:w-1/4 p-4">
+          <div className="w-1/2 sm:w-1/2 lg:w-1/4 p-4">
             <div className="funfact text-center">
               <h3 className="text-4xl font-bold text-blue-600">50+</h3>
               <p className="text-gray-600">Ongoing Projects</p>
             </div>
           </div>
 
-          <div className="w-full sm:w-1/2 lg:w-1/4 p-4">
+          <div className="w-1/2 sm:w-1/2 lg:w-1/4 p-4">
             <div className="funfact text-center">
               <h3 className="text-4xl font-bold ">11+</h3>
               <p className="text-gray-600">Years Of Expertise</p>
             </div>
           </div>
 
-          <div className="w-full sm:w-1/2 lg:w-1/4 p-4">
+          <div className="w-1/2 sm:w-1/2 lg:w-1/4 p-4">
             <div className="funfact text-center">
               <h3 className="text-4xl font-bold text-blue-600">50+</h3>
               <p className="text-gray-600">Innovative Experts</p>
             </div>
           </div>
 
-          <div className="w-full sm:w-1/2 lg:w-1/4 p-4">
+          <div className="w-1/2 sm:w-1/2 lg:w-1/4 p-4">
             <div className="funfact text-center">
               <h3 className="text-4xl font-bold text-blue-600">92%</h3>
               <p className="text-gray-600">Client Retention Rate</p>

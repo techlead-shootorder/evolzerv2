@@ -13,9 +13,8 @@ module.exports = {
       },
       container: {
         center: true, // Optional: centers the container
-        padding: '1rem', // Optional: adjust padding as needed
         screens: {
-          DEFAULT: '1140px', // Set the default container width to 1140px
+          DEFAULT: '1170px', // Set the default container width to 1140px
         },
       },
     },

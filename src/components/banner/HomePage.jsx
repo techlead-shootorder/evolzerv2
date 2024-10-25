@@ -3,21 +3,22 @@ import Link from "next/link"; // Use Next.js Link
 
 const HomePage = () => {
   return (
-    <div className="bg-white pt-[280px] bigdata-analytics-banner">
+    <div className="bg-white !pt-[150px] md:!pt-[280px] bigdata-analytics-banner">
       <div className="container mx-auto">
-        <div className="text-left mb-12 w-full md:w-1/2"> {/* Changed to w-full for small screens */}
-          <h1 className="text-[50px] mb-[25px] leading-[70px] font-bold text-white">
+        <div className="text-center md:text-left mb-12 w-full md:w-1/2"> {/* Changed to w-full for small screens */}
+          <h1 className="text-center text-[27px] leading-[35px] md:text-left md:text-[50px] mb-[25px] md:leading-[70px] font-bold text-white">
             Developing Technology for A Smarter World
           </h1>
-          <p className="mt-4 text-[#e9e9e9] max-w-[470px] text-[15px]">
+          <p className="text-center md:text-left mt-4 text-[#e9e9e9] max-w-[470px] text-[15px]">
             Driving digital transformation with cutting-edge technology
             solutions in application development, data analytics and
             engineering, software development, DevOps services, UI/UX design, AI
             and Machine learning.
           </p>
+
           <Link
             href="/contact"
-            className="inline-block mt-6 bg-[#f15a29] text-white py-4 px-8 rounded hover:bg-blue-600 transition"
+            className="inline-block text-center md:text-left mt-6 bg-[#f15a29] text-white py-4 px-8 rounded hover:bg-blue-600 transition"
           >
             Get Started
           </Link>
