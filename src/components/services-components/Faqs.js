@@ -10,7 +10,7 @@ const Faqs = ({ faq }) => (
         <Disclosure key={item.id} as="div" className="mb-4  rounded shadow">
           {({ open }) => (
             <>
-              <Disclosure.Button className="flex justify-between items-center w-full px-6 py-3 text-left font-medium text-gray-900 bg-white hover:bg-opacity-80 transition-colors rounded">
+              <Disclosure.Button className="flex justify-between items-center w-full px-6 py-3 text-left font-medium text-gray-900 bg-white hover:bg-opacity-80 transition-colors rounded !leading-[25px]">
                 <span className="normal-case font-[600]">{item.question}</span>
                 {open ? (
                   <MdExpandLess className="w-5 h-5 text-black" />

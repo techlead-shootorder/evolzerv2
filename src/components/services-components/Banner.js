@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import Image from "next/image"; // Import Image component
 
 const Banner = ({ pageTitle, banner, pagesubtitle }) => {
   const [formData, setFormData] = useState({
@@ -105,12 +106,16 @@ const Banner = ({ pageTitle, banner, pagesubtitle }) => {
   return (
     <>
       <Toaster />
-      <div
-        className="page-title-area relative"
-        style={{ background: `transparent url(${banner}) center no-repeat` }}
-      >
+      <div className="page-title-area relative "> {/* Set height as needed */}
+        <Image
+          src={banner} // Use the banner prop as the source
+          alt="Banner background"
+          layout="fill" // Make the image fill the parent div
+          objectFit="cover" // Ensure the image covers the entire area
+          priority // Optional: Load this image with priority
+        />
         <div className="overlay absolute inset-0 bg-black opacity-50"></div>
-        <div className="container mx-auto relative z-10">
+        <div className="container mx-auto relative z-10 h-full flex flex-col justify-center"> {/* Centering content */}
           <div className="grid grid-cols-12 items-center justify-between md:gap-24">
             {/* Text Section */}
             <div className="col-span-12 lg:col-span-7 text-center lg:text-left">
@@ -128,7 +133,7 @@ const Banner = ({ pageTitle, banner, pagesubtitle }) => {
 
             {/* Form Section */}
             {!isAboutUsPage && (
-              <div className="col-span-12 lg:col-span-5 mt-10 lg:mt-0 form-margin">
+              <div className="col-span-12 lg:col-span-5 mt-10 lg:mt-0 form-margin flex justify-end">
                 <div className="bg-white p-6 rounded w-full max-w-sm mx-auto lg:mx-0">
                   <h3 className="text-center text-dark text-[28px] mb-4">Get A Quote</h3>
                   <form onSubmit={handleSubmit}>

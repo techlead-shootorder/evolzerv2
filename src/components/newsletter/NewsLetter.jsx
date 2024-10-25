@@ -17,13 +17,13 @@ const NewsletterStyleTwo = () => {
         <div className="flex flex-col lg:flex-row items-center">
           {/* Image Container */}
           <div className="lg:w-1/2 w-full mb-4 lg:mb-0">
-            <div className="newsletter-image">
-              <img
+            <div className="newsletter-image relative w-full h-0 pb-[56.25%]"> {/* Aspect Ratio 16:9 */}
+              <Image
                 src="/images/bigdata-analytics/contact.jpg"
                 alt="Newsletter"
-              
-                layout="responsive"
-                objectFit="cover"
+                layout="fill" // Use fill to cover the entire area
+                objectFit="cover" // Ensure the image covers the area
+                priority // Optional: Load this image with priority
               />
             </div>
           </div>

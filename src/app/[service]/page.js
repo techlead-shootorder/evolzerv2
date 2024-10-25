@@ -1,13 +1,17 @@
-import CaseStudyPage from "@/components/case-studies/CaseStudyPage";
-import Client from "@/components/client/Client";
-import IndustriesCater from "@/components/industries/Industries";
-import NewsletterStyleTwo from "@/components/newsletter/NewsLetter";
-import AboutService from "@/components/services-components/AboutService";
-import Banner from "@/components/services-components/Banner";
-import Faqs from "@/components/services-components/Faqs";
-import Process from "@/components/services-components/Process";
-import TechStackAndTools from "@/components/services-components/TechStackAndTools";
-import WhatWeDo from "@/components/services-components/WhatWeDo";
+import React, { lazy, Suspense } from "react";
+import { notFound } from "next/navigation";
+
+// Lazy load the components
+const CaseStudyPage = lazy(() => import("@/components/case-studies/CaseStudyPage"));
+const Client = lazy(() => import("@/components/client/Client"));
+const IndustriesCater = lazy(() => import("@/components/industries/Industries"));
+const NewsletterStyleTwo = lazy(() => import("@/components/newsletter/NewsLetter"));
+const AboutService = lazy(() => import("@/components/services-components/AboutService"));
+const Banner = lazy(() => import("@/components/services-components/Banner"));
+const Faqs = lazy(() => import("@/components/services-components/Faqs"));
+const Process = lazy(() => import("@/components/services-components/Process"));
+const TechStackAndTools = lazy(() => import("@/components/services-components/TechStackAndTools"));
+const WhatWeDo = lazy(() => import("@/components/services-components/WhatWeDo"));
 import { webdevfaqsfaqs } from "@/utils/faqs";
 import {
   webDevelopmentDatabases,
@@ -16,7 +20,6 @@ import {
   webDevelopmentStacks,
   webDevelopmentTools,
 } from "@/utils/techstack";
-import { notFound } from "next/navigation"; // Use Next.js 13 notFound() function
 
 // Define the list of valid services
 const services = [
@@ -36,6 +39,7 @@ const services = [
   "generative-ai",
   "enterprise-ai",
 ];
+
 export const WebDevServices = [
   {
     imageUrl: "/images/web-services/web-con.jpg",
@@ -109,28 +113,30 @@ export default function ServicePage({ params }) {
 
   return (
     <div>
-      <Banner
-        pageTitle={"Expert Web Development"}
-        banner={"/images/banner-image/web-application.png"}
-        pagesubtitle={
-          "Crafting user-friendly, responsive and high-performing websites that shine online, using the latest technologies and best practices to help you stand out in the crowd."
-        }
-      />
-      <AboutService />
-      <WhatWeDo heading="What We Do" service={WebDevServices} />
-      <Process />
-      <TechStackAndTools
-        stacks={webDevelopmentStacks}
-        tools={webDevelopmentTools}
-        framework={webDevelopmentFrameworks}
-        database={webDevelopmentDatabases}
-        platform={webDevelopmentPlatforms}
-      />
-      <Faqs faq={webdevfaqsfaqs} />
-      <IndustriesCater bg="bg-white" />
-      <CaseStudyPage />
-      <NewsletterStyleTwo />
-      <Client />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Banner
+          pageTitle={"Expert Web Development"}
+          banner={"/images/banner-image/web-application.png"}
+          pagesubtitle={
+            "Crafting user-friendly, responsive and high-performing websites that shine online, using the latest technologies and best practices to help you stand out in the crowd."
+          }
+        />
+        <AboutService />
+        <WhatWeDo heading="What We Do" service={WebDevServices} />
+        <Process />
+        <TechStackAndTools
+          stacks={webDevelopmentStacks}
+          tools={webDevelopmentTools}
+          framework={webDevelopmentFrameworks}
+          database={webDevelopmentDatabases}
+          platform={webDevelopmentPlatforms}
+        />
+        <Faqs faq={webdevfaqsfaqs} />
+        <IndustriesCater bg="bg-white" />
+        <CaseStudyPage />
+        <NewsletterStyleTwo />
+        <Client />
+      </Suspense>
     </div>
   );
 }
